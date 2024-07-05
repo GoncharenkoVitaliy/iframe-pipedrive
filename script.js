@@ -1,4 +1,4 @@
-'use strict';
+'strict mode';
 
 const form = document.querySelector('#form');
 form.addEventListener('submit', formSend);
@@ -15,20 +15,20 @@ function formValidate(formRequest) {
 	return validData;
 }
 
-function formAddError(input) {
-	input.setAttribute('required', '');
-	input.classList.add('_error');
+function formAddError(element) {
+	element.setAttribute('required', '');
+	element.classList.add('_error');
 }
 
-function formRemoveError(input) {
-	input.classList.remove('_error');
-	input.removeAttribute('required');
+function formRemoveError(element) {
+	element.removeAttribute('required');
+	element.classList.remove('_error');
 }
 
 async function formSend(event) {
 	event.preventDefault();
 
-	let formRequest = document.querySelectorAll('._req');
+	const formRequest = document.querySelectorAll('._req');
 	const validData = formValidate(formRequest);
 	const objData = {};
 
@@ -41,14 +41,15 @@ async function formSend(event) {
 
 		const buttonSubmit = document.querySelector('.create-job');
 		buttonSubmit.textContent = 'Request is sent';
+		buttonSubmit.style.background = 'red';
 
 		saveData(objData);
 	}
 }
 
 function saveData(objData) {
-	const link = 'https://api.pipedrive.com/v1/deals?api_token=YOUR_API_TOKEN';
-	console.log('objData:', objData);
+	const link = 'https://api.pipedrive.com/v1/deals?api_token=a01578a8efbeee376e735aa6ee299148e6b68fb9';
+	// console.log('objData:', objData);
 
 	fetch(link, {
 		method: 'POST',
@@ -66,6 +67,5 @@ function saveData(objData) {
 		}
 		return response.json();
 	})
-	.then(data => console.log(data))
 	.catch(error => console.error('Fetch error:', error));
 }
