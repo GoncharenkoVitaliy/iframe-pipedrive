@@ -27,18 +27,18 @@ function formRemoveError(input) {
 
 async function formSend(event) {
 	event.preventDefault();
-	
+
 	let formRequest = document.querySelectorAll('._req');
 	const validData = formValidate(formRequest);
 	const objData = {};
 
 	if (validData) {
 		const input = form.querySelectorAll('.data');
-		
+
 		input.forEach((elem) => {
 			objData[elem.name] = elem.value;
 		});
-		
+
 		const buttonSubmit = document.querySelector('.create-job');
 		buttonSubmit.textContent = 'Request is sent';
 
@@ -48,8 +48,8 @@ async function formSend(event) {
 
 function saveData(objData) {
 	const link = 'https://api.pipedrive.com/v1/deals?api_token=YOUR_API_TOKEN';
-	// console.log(objData);
-	
+	console.log('objData:', objData);
+
 	fetch(link, {
 		method: 'POST',
 		headers: {
@@ -60,7 +60,12 @@ function saveData(objData) {
 			value: objData
 		})
 	})
-		.then(response => response.json())
-		.then(data => console.log(data))
-		.catch(error => console.error('Error:', error));
+	.then(response => {
+		if (!response.ok) {
+			throw new Error('Network response was not ok');
+		}
+		return response.json();
+	})
+	.then(data => console.log(data))
+	.catch(error => console.error('Fetch error:', error));
 }
