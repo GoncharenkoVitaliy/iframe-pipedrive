@@ -62,7 +62,7 @@ function saveData(objData) {
 	})
 	.then(response => {
 		if (!response.ok) {
-			throw new Error('Network response was not ok');
+			throw new Error('The network response was incorrect');
 		}
 		return response.json();
 	})
