@@ -2,7 +2,6 @@
 
 const form = document.querySelector('#form');
 form.addEventListener('submit', formSend);
-const objData = {};
 
 function formValidate(formRequest) {
 	let validData = true;
@@ -28,8 +27,10 @@ function formRemoveError(input) {
 
 async function formSend(event) {
 	event.preventDefault();
+	
 	let formRequest = document.querySelectorAll('._req');
 	const validData = formValidate(formRequest);
+	const objData = {};
 
 	if (validData) {
 		const input = form.querySelectorAll('.data');
@@ -37,10 +38,29 @@ async function formSend(event) {
 		input.forEach((elem) => {
 			objData[elem.name] = elem.value;
 		});
-
-		window.parent.postMessage({ type: 'formData', data: objData }, '*');
 		
 		const buttonSubmit = document.querySelector('.create-job');
 		buttonSubmit.textContent = 'Request is sent';
+
+		saveData(objData);
 	}
+}
+
+function saveData(objData) {
+	const link = 'https://api.pipedrive.com/v1/deals?api_token=YOUR_API_TOKEN';
+	// console.log(objData);
+	
+	fetch(link, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			title: 'New deal',
+			value: objData
+		})
+	})
+		.then(response => response.json())
+		.then(data => console.log(data))
+		.catch(error => console.error('Error:', error));
 }

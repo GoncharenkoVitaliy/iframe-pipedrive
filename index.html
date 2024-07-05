@@ -4,15 +4,73 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./style/style.css">
+	<link rel="stylesheet" href="./styleForm.css">
 	<script src="https://cdn.jsdelivr.net/npm/@pipedrive/app-extensions-sdk@0/dist/index.umd.js"></script>
 	<title>Iframe</title>
 </head>
 
 <body class="budy">
-	<iframe id="my-iframe" src="./form/form.html" width="600" height="400"></iframe>
+	<main class="main">
+		<form action="#" id="form">
+			<div class="container">
+				<div class="group">
+					<h1>Client details</h1>
+					<div class="wrapper">
+						<input name="Name" type="text" class="data name border _req" placeholder="Name *">
+						<input name="Last name" type="text" class="data last-Name border" placeholder="Last name">
+						<input name="Telephone" type="tel" class="data telephon border" placeholder="Telephone">
+						<input name="Email" type="email" class="data email border _req" placeholder="Email *">
+					</div>
+				</div>
+				<div class="group">
+					<h1>Job type</h1>
+					<div class="wrapper">
+						<select name="Select job type" id="select-job-type" class="data border _req">
+							<option value="" autofocus></option>
+							<option value="Select job type">Select job type</option>
+						</select>
+						<select name="GL Pinelass" id="g-l-pinelass" class="data border">
+							<option value="" autofocus></option>
+							<option value="GL Pinelass">GL Pinelass</option>
+						</select>
+						<textarea name="Job description" class="data job_description border"
+							placeholder="Job description (optional)"></textarea>
+					</div>
+				</div>
+				<div class="group">
+					<h1>Service location</h1>
+					<div class="wrapper">
+						<input name="Adress" type="text" class="data adress border _req" placeholder="Adress *">
+						<input name="City" type="text" class="data city border" placeholder="City">
+						<input name="State" type="text" class="data state border" placeholder="State">
+						<input name="City" type="number" class="data postcode border" placeholder="Postcode">
+						<select name="Postcode" id="tampa" class="data border">
+							<option value="" autofocus></option>
+							<option value="Tampa">Tampa</option>
+						</select>
+					</div>
+				</div>
+				<div class="group">
+					<h1>Scheduled</h1>
+					<div class="wrapper">
+						<input name="date" type="date" class="data date border">
+						<input name="Time start" type="time" class="data time-start border" value="08:00">
+						<input name="Time end" type="time" class="data time-end border" value="08:00">
+						<select name="Technician" id="technician" class="data border">
+							<option value="" autofocus></option>
+							<option value="Select technician">Select technician</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<button type="submit" class="create-job button">Create job</button>
+				<button class="save-info button">Save info</button>
+			</footer>
+		</form>
+	</main>
 
-	<script type="module" src="./iframe.js"></script>
+	<script src="./script.js"></script>
 </body>
 
 </html>
