@@ -48,14 +48,11 @@ async function formSend(event) {
 }
 
 function saveData(objData) {
-	const link = 'https://goncharenkovitaliy.github.io/iframe-pipedrive/?code=13525530.21566062.86af426f50b7a1bf8250371b477ac7c19af68c5a';
+	const link = 'https://goncharenkovitaliy.github.io/iframe-pipedrive/?code=13525530.21566062.bed5a485c9d152488ae0c9cc8adfac328142e0d3';
 	// console.log('objData:', objData);
 
 	fetch(link, {
 		method: 'POST',
-		client_id: '66ebd1fa62e84fbb',
-		client_secret: '90ec2d3231f61cccd92890e50104817cf8a47550',
-		api_token: 'bed5a485c9d152488ae0c9cc8adfac328142e0d3',
 		headers: {
 			'Content-Type': 'application/json'
 		},
