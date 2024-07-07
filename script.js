@@ -1,7 +1,5 @@
 "use strict"
 
-// pipedriveUI.modal.openByName('NEW Create a job three');
-
 const form = document.querySelector('#form');
 form.addEventListener('submit', formSend);
 
@@ -50,7 +48,7 @@ async function formSend(event) {
 }
 
 function saveData(objData) {
-	const link = 'https://goncharenkovitaliy.github.io/iframe-pipedrive/?code=13525530.21566062.3414aafa12ac87d2317a1241a393e0d952c21a3e';
+	const link = 'https://goncharenkovitaliy.github.io/iframe-pipedrive/`';
 	console.log('objData:', objData);
 
 	fetch(link, {
@@ -72,8 +70,3 @@ function saveData(objData) {
 	})
 	.catch(error => console.error('Fetch error:', error));
 }
-
-// <!-- <header class="header">
-// 		<p class="name-card">NEW Create a job</p>
-// 		<button class="button-close"></button>
-// 	</header> -->
