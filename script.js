@@ -1,9 +1,5 @@
 "use strict"
 
-import AppExtensionsSDK from '@pipedrive/app-extensions-sdk';
-const sdk = await new AppExtensionsSDK({ identifier: '87b2d4ce3b1a112714be4c15769e6fe252a65b6d' })
-  .initialize({ size: { height: 700, weight: 800 } });
-
 const form = document.querySelector('#form');
 form.addEventListener('submit', formSend);
 
