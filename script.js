@@ -48,7 +48,7 @@ async function formSend(event) {
 }
 
 function saveData(objData) {
-	const link = 'https://api.pipedrive.com/v1/deals?api_token=a01578a8efbeee376e735aa6ee299148e6b68fb9';
+	const link = 'https://goncharenkovitaliy.github.io/iframe-pipedrive/?code=13525530.21566062.86af426f50b7a1bf8250371b477ac7c19af68c5a';
 	// console.log('objData:', objData);
 
 	fetch(link, {
