@@ -55,6 +55,7 @@ function saveData(objData) {
 		method: 'POST',
 		client_id: '66ebd1fa62e84fbb',
 		client_secret: '90ec2d3231f61cccd92890e50104817cf8a47550',
+		api_token: 'bed5a485c9d152488ae0c9cc8adfac328142e0d3',
 		headers: {
 			'Content-Type': 'application/json'
 		},
@@ -67,6 +68,7 @@ function saveData(objData) {
 		if (!response.ok) {
 			throw new Error('The network response was incorrect');
 		}
+		console.log('response', response);
 		return response.json();
 	})
 	.catch(error => console.error('Fetch error:', error));
