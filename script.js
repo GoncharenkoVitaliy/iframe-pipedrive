@@ -53,8 +53,8 @@ function saveData(objData) {
 
 	fetch(link, {
 		method: 'POST',
-		grant_type:"authorization_code",
-		redirect_uri: 'https://goncharenkovitaliy.github.io/iframe-pipedrive/?code=13525530.21566062.69dbef7dff87600f5664311509fb23f503d002a5',
+		client_id: '66ebd1fa62e84fbb',
+		client_secret: '90ec2d3231f61cccd92890e50104817cf8a47550',
 		headers: {
 			'Content-Type': 'application/json'
 		},
