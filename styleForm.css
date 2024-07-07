@@ -67,7 +67,6 @@ input {
 	background-color: var(--color-border);
 }
 .header__button-close {
-	cursor: pointer;
 	position: relative;
 }
 .header__button-close:before,
